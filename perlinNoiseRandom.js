@@ -7,6 +7,15 @@ permutation.sort(() => Math.random() - 0.5);
 for (var i=0; i < 256 ; i++) 
   pRandom[256+i] = pRandom[i] = permutation[i];
 
+function generatePermutation() {
+  for (var i = 0; i < 256; i++) {
+    permutation[i] = i;
+  }
+  permutation.sort(() => Math.random() - 0.5);
+  for (var i=0; i < 256 ; i++) 
+    pRandom[256+i] = pRandom[i] = permutation[i];
+}
+
 function fadeRandom(t) { return t * t * t * (t * (t * 6 - 15) + 10); }
 function lerpRandom(t, a, b) { return a + t * (b - a); }
 function gradRandom(hash, x, y, z) {
